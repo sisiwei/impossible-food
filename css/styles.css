@@ -1,3 +1,7 @@
+*, *:before, *:after {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
 html, body {
 	width: 400px;
 	margin: 0 auto;
@@ -7,6 +11,7 @@ body {
 	margin: 0;
 	background-color: #d5d5d5;
 	width: 100%;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .cf:before,
@@ -107,6 +112,54 @@ h4 {
 .chosen-container .chosen-results li {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.table {
+	margin: 20px 0 0 0;
+}
+
+.table .th div {
+	color: white;
+	float: left;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.table .tr div {
+	float: left;
+	font-size: 13px;
+}
+
+.qty-col {
+	width: 50px;
+}
+
+.food-item {
+	width: 150px;
+}
+
+.food-miles {
+	width: 123px;
+}
+
+
+.tr .qty-col {
+	color: #666;
+	background-color: white;
+	padding: 5px;
+}
+
+.tr .food-item {
+	padding: 5px;
+	background-color: #001F3F;
+	color: white;
+}
+
+.tr .food-miles {
+	padding: 5px;
+	color: #001F3F;
+}
+
+
 
 .footer {
 	background-color: #F3005E;
