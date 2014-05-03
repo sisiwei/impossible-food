@@ -2,20 +2,65 @@ body {
 	margin: 0;
 }
 
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+
 h1 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
+	font-size: 70px;
+	margin: 0 0 0 25px;
 }
 
 h4 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
+	width: 230px;
+	font-weight: 400;
+	margin: 16px 0 0 20;
 }
 
 .header {
 	background-color: #F3005E;
+	height: 67px;
+	padding: 15px 0 0 0;
 }
 
 .header h1, .header h4 {
 	color: white;
+	float: left;
+}
+
+.footer {
+	background-color: #F3005E;
+	height: 40px;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+}
+
+@media (max-width: 480px) {
+	h1 {
+		font-size: 50px;
+		line-height: 50px;
+		margin: 20px 0 25px 25px;
+	}
+
+	h4 {
+		position: absolute;
+		left: 170px;
+		top: 74px;
+		font-size: 11px;
+		width: 153px;
+	}
+
+	.header {
+		height: inherit;
+	}
 }
