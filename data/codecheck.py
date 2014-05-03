@@ -6,17 +6,18 @@ import json
 
 urls = {}
 
-urls['crops'] = "http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/QC/E"
-urls['livestock'] = "http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/QL/E"
-urls['trade'] = "http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/TM/E"
+urls['crops'] = "QC/E"
+urls['livestock'] = "QL/E"
+urls['trade'] = "TM/E"
 
+base_url = "http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/"
 production = []
 trade = {}
 
 shared_items = {}
 
 for key in urls:
-    response = requests.get(urls[key]).json()    
+    response = requests.get(base_url+urls[key]).json()    
     for res in response:
         if key != 'trade':
             production.append(res[0])
