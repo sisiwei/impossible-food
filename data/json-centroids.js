@@ -2,7 +2,7 @@ var fs = require("fs");
 var d3 = require("d3");
 var queue = require("queue-async");
 
-var weirdCountries = {
+var weirdCountryNames = {
   "Ascension": "Saint Helena, Ascension and Tristan da Cunha",
   "Bolivia": "Bolivia (Plurinational State of)",
   "Brunei": "Brunei Darussalam",
@@ -25,12 +25,12 @@ var weirdCountries = {
 
 queue()
   .defer(fs.readFile,"country_centroids_primary.csv","utf8")
-  .defer(fs.readFile,"TM-countries.json","utf8")
+  .defer(fs.readFile,"clean/countries-by-name.json","utf8")
   .await(function(err,centroids,countries){
 
-    countries = JSON.parse(countries).map(function(d){
-      return d[1];
-    });
+    countries = JSON.parse(countries);
+
+    var countryNames = d3.keys(countries);
 
     centroids = d3.tsv.parse(centroids).map(function(d){
       return {
@@ -42,9 +42,10 @@ queue()
     });
 
     centroids = centroids.map(function(d){
-      if (countries.indexOf(d.name) != -1) d.realName = d.name;
-      else if (countries.indexOf(d.fullName) != -1) d.realName = d.fullName;
-      else if (weirdCountries[d.name])  d.realName = weirdCountries[d.name];
+      if (countryNames.indexOf(d.name) != -1) d.realName = d.name;
+      else if (countryNames.indexOf(d.fullName) != -1) d.realName = d.fullName;
+      else if (weirdCountryNames[d.name])  d.realName = weirdCountryNames[d.name];
+      else console.log(d);
       return d;
     });
 
@@ -52,19 +53,20 @@ queue()
       return d.realName !== null;
     });
 
-    console.log(countries.filter(function(d){
+    console.log(countryNames.filter(function(d){
       return centroids.filter(function(f){
         return f.realName == d;
       }).length == 0;
     }));
 
-    var output = {};
+    var byName = {}, byCode = {};
 
     centroids.forEach(function(d){
-      output[d.realName] = d.lngLat;
+      byName[d.realName] = d.lngLat;
+      byCode[countries[d.realName]] = d.lngLat;
     });
 
-  fs.writeFile("centroids.json",JSON.stringify(output,null,"\t"),function(err){
-    console.log(err);
-  });
+    fs.writeFile("clean/centroids-by-name.json",JSON.stringify(byName),function(err){console.log(err);});
+    fs.writeFile("clean/centroids-by-codes.json",JSON.stringify(byCode),function(err){console.log(err);});
+
 });
