@@ -1,7 +1,3 @@
-*, *:before, *:after {
-	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-}
-
 html, body {
 	width: 400px;
 	margin: 0 auto;
@@ -109,9 +105,18 @@ h4 {
 	border: 0px;
 }
 
+.impossible .chosen-container-single .chosen-single div {
+	top: 4px;
+}
+
 .chosen-container .chosen-results li {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+.table .tr div, .table .tr div:before, .table .tr div:after {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
 
 .table {
 	margin: 20px 0 0 0;
@@ -122,6 +127,7 @@ h4 {
 	float: left;
 	font-size: 13px;
 	text-transform: uppercase;
+	margin-bottom: 10px;
 }
 
 .table .tr div {
@@ -130,28 +136,34 @@ h4 {
 }
 
 .qty-col {
-	width: 50px;
+	width: 30px;
+	margin-right: 10px;
 }
 
 .food-item {
 	width: 150px;
+	margin-right: 10px;
 }
 
 .food-miles {
 	width: 123px;
+	text-align: right;
 }
 
 
 .tr .qty-col {
 	color: #666;
 	background-color: white;
-	padding: 5px;
+	padding: 8px 5px;
+	text-align: center;
+	border-radius: 3px;
 }
 
 .tr .food-item {
-	padding: 5px;
+	padding: 8px 10px;
 	background-color: #001F3F;
-	color: white;
+	color: #FFF;
+	border-radius: 3px;
 }
 
 .tr .food-miles {
