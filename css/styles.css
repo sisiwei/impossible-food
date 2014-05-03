@@ -1,6 +1,12 @@
+html, body {
+	width: 400px;
+	margin: 0 auto;
+}
+
 body {
 	margin: 0;
-	background-color: #eee;
+	background-color: #d5d5d5;
+	width: 100%;
 }
 
 .cf:before,
@@ -12,23 +18,35 @@ body {
     clear: both;
 }
 
+.impossible {
+	width: 400px;
+	margin: 0 auto;
+	position: relative;
+}
+
 h1 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	font-size: 70px;
-	margin: 0 0 0 25px;
+	font-size: 50px;
+	line-height: 50px;
+	margin: 20px 0 25px 25px;
 }
 
 h4 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	width: 230px;
 	font-weight: 400;
 	margin: 26px 0 0 20;
+	position: absolute;
+	left: 170px;
+	top: 74px;
+	font-size: 11px;
+	width: 153px;
 }
 
 .header {
 	padding: 15px 0 10px;
+	position: relative;
 }
 
 .header h1, .header h4 {
@@ -37,7 +55,16 @@ h4 {
 }
 
 .header h1 span {
-	color: #FFDC00;
+	color: #001F3F;
+}
+
+.content {
+	margin: 10px auto;
+	width: 86%;
+}
+
+a.chosen-single.chosen-default {
+	border-radius: 0px;
 }
 
 .footer {
@@ -45,25 +72,4 @@ h4 {
 	height: 40px;
 	position: absolute;
 	bottom: 0px;
-	width: 100%;
-}
-
-@media (max-width: 480px) {
-	h1 {
-		font-size: 50px;
-		line-height: 50px;
-		margin: 20px 0 25px 25px;
-	}
-
-	h4 {
-		position: absolute;
-		left: 170px;
-		top: 74px;
-		font-size: 11px;
-		width: 153px;
-	}
-
-	.header {
-		height: inherit;
-	}
 }
