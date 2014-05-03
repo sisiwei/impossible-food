@@ -18,6 +18,8 @@ fs.readFile("trade-matrix-temp.json","utf8",function(err,data){
   }
 
   fs.writeFile("trade-matrix.json",JSON.stringify(data),function(err){
-    console.log(err);
+    if (!err) {
+      fs.unlink("trade-matrix-temp.json");
+    }
   });
 })
