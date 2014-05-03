@@ -130,6 +130,10 @@ h4 {
 	margin-bottom: 10px;
 }
 
+.table .tr {
+	display:none;
+}
+
 .table .tr div {
 	float: left;
 	font-size: 14px;
@@ -180,11 +184,11 @@ h4 {
 	color: #001F3F;
 }
 
-
-
 .footer {
-	background-color: #F3005E;
+	background-color: white;
 	height: 40px;
 	position: absolute;
 	bottom: 0px;
+	width: 320px;
+	margin: 0 30px;
 }
