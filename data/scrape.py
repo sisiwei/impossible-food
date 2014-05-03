@@ -2,57 +2,89 @@ import io
 import json
 import requests
 import sys
-from cStringIO import StringIO
+import os.path
+from pprint import pprint
 
 if __name__ == "__main__":
-  DOMAIN = "TA"
+  DOMAIN = "TM"
 
-
-  gd_response = requests.get("http://faostat3.fao.org/faostat-api/rest/groupsanddomains/faostat/E")
-  print "%s: %s" % (gd_response.status_code, gd_response.url)
-  domain_data = map(lambda d: (d[0], d[1]), gd_response.json())
-  with open("groups-and-domains.json", 'wb') as f:
-    f.write(gd_response.text.encode('utf-8'))
+  fn = "groups-and-domains.json"
+  if not os.path.exists(fn):
+    gd_response = requests.get("http://faostat3.fao.org/faostat-api/rest/groupsanddomains/faostat/E")
+    print "%s: %s" % (gd_response.status_code, gd_response.url)
+    domain_data = map(lambda d: (d[0], d[1]), gd_response.json())
+    with open(fn, 'wb') as f:
+      f.write(gd_response.text.encode('utf-8'))
   
+  fn = "%s-countries.json" % DOMAIN
+  if not os.path.exists(fn):
+    c_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/countries/faostat/%s/E" % DOMAIN)
+    print "%s: %s" % (c_response.status_code, c_response.url)
+    country_codes = map(lambda c: c[0], c_response.json())
+    with open(fn, 'wb') as f:
+      f.write(c_response.text.encode('utf-8'))
+  else:
+    with open(fn, 'rb') as f:
+      country_codes = map(lambda c: c[0], json.loads(f.read()))
 
-  c_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/countries/faostat/%s/E" % DOMAIN)
-  print "%s: %s" % (c_response.status_code, c_response.url)
-  country_data = map(lambda d: (d[0], d[1]), c_response.json())
-  country_codes = map(lambda c: c[0], country_data)
-  with open("%s-countries.json" % DOMAIN, 'wb') as f:
-    f.write(c_response.text.encode('utf-8'))
 
-  i_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/%s/E" % DOMAIN)
-  print "%s: %s" % (i_response.status_code, i_response.url)
-  item_data = map(lambda d: (d[0], d[1]), i_response.json())
-  item_codes = map(lambda c: c[0], item_data)
-  with open("%s-items.json" % DOMAIN, 'wb') as f:
-    f.write(i_response.text.encode('utf-8'))
+  fn = "%s-special-groups.json" % DOMAIN
+  if not os.path.exists(fn):
+    s_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/countries/faostat/%s/E" % DOMAIN)
+    print "%s: %s" % (s_response.status_code, s_response.url)
+    specialgroup_codes = map(lambda c: c[0], s_response.json())
+    with open(fn, 'wb') as f:
+      f.write(s_response.text.encode('utf-8'))
+  else:
+    with open(fn, 'rb') as f:
+      specialgroup_codes = map(lambda c: c[0], json.loads(f.read()))
 
-  e_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/elements/faostat/%s/E" % DOMAIN)
-  print "%s: %s" % (e_response.status_code, e_response.url)
-  element_data = map(lambda d: (d[0], d[1]), e_response.json())
-  element_codes = map(lambda c: c[0], element_data)
-  with open("%s-elements.json" % DOMAIN, 'wb') as f:
-    f.write(e_response.text.encode('utf-8'))
+  fn = "%s-items.json" % DOMAIN
+  if not os.path.exists(fn):
+    i_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/%s/E" % DOMAIN)
+    print "%s: %s" % (i_response.status_code, i_response.url)
+    item_codes = map(lambda c: c[0], i_response.json())
+    with open(fn, 'wb') as f:
+      f.write(i_response.text.encode('utf-8'))
+  else:
+    with open(fn, 'rb') as f:
+      item_codes = map(lambda c: c[0], json.loads(f.read()))
 
-  y_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/years/faostat/TM")
-  print "%s: %s" % (y_response.status_code, y_response.url)
-  year_codes = map(lambda c: int(c[0]), y_response.json())
+  fn = "%s-elements.json" % DOMAIN
+  if not os.path.exists(fn):
+    e_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/elements/faostat/%s/E" % DOMAIN)
+    print "%s: %s" % (e_response.status_code, e_response.url)
+    element_codes = map(lambda c: c[0], e_response.json())
+    with open(fn, 'wb') as f:
+      f.write(e_response.text.encode('utf-8'))
+  else:
+    with open(fn, 'rb') as f:
+      element_codes = map(lambda c: c[0], json.loads(f.read()))
 
-  for y in year_codes:
+  fn = "%s-years.json" % DOMAIN
+  if not os.path.exists(fn):
+    y_response = requests.get("http://faostat3.fao.org/faostat-api/rest/procedures/years/faostat/TM")
+    print "%s: %s" % (y_response.status_code, y_response.url)
+    year_codes = map(lambda c: int(c[0]), y_response.json())
+    with open(fn, 'wb') as f:
+      f.write(y_response.text.encode('utf-8'))
+  else:
+    with open(fn, 'rb') as f:
+      year_codes = map(lambda c: int(c[0]), json.loads(f.read()))
+
+  for y in [2011,]: #year_codes:
     data = {
       "datasource" : "faostat",
       "domainCode" : DOMAIN,
       "lang" : "E",
-      "areaCodes" : country_codes,
+      "areaCodes" : ["231",], #country_codes,
       "itemCodes" : item_codes,
       "elementListCodes" : element_codes,
       "years" : [y],
       "flags" : True,
       "codes" : True,
       "units" : True,
-      "nullValues" : False,
+      "nullValues" : True,
       "thousandSeparator" : ",",
       "decimalSeparator" : ".",
       "decimalPlaces" : 2,
@@ -60,7 +92,8 @@ if __name__ == "__main__":
     }
     data_str = json.dumps(data)
 
-    #print data_str
+    #pprint(data_str)
+
     response = requests.post(
       "http://faostat3.fao.org/faostat-api/rest/procedures/data",
       data={"payload": data_str}
