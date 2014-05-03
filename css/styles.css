@@ -63,8 +63,49 @@ h4 {
 	width: 86%;
 }
 
-a.chosen-single.chosen-default {
+#food {
+	width: 250px !important;
+}
+
+#qty {
+	width: 68px !important;
+}
+
+.add-to-list {
+	width: 322px;
+	padding: 13px 0;
+	background-color: #001F3F;
+	color: #FFF;
+	text-transform: uppercase;
+	font-size: 14px;
+	border-radius: 3px;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	margin: 8px 0;
+	cursor: pointer;
+}
+
+.impossible .chosen-container-single .chosen-single {
+	background: #FFF;
 	border-radius: 0px;
+	padding: 5px 10px;
+	border: 0px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.impossible .chosen-container-active.chosen-with-drop .chosen-single {
+	background-color: #FFF;
+	border: none;
+	background-image: none;
+	box-shadow: none;
+}
+
+.impossible .chosen-container.chosen-with-drop .chosen-drop {
+	border: 0px;
+}
+
+.chosen-container .chosen-results li {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .footer {
