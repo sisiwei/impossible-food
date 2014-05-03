@@ -13,20 +13,19 @@ urls['trade'] = "TM/E"
 base_url = "http://faostat3.fao.org/faostat-api/rest/procedures/items/faostat/"
 production = []
 trade = {}
-
-shared_items = {}
+shared_items = {'crops':{},'livestock':{}}
 
 for key in urls:
     response = requests.get(base_url+urls[key]).json()    
     for res in response:
         if key != 'trade':
-            production.append(res[0])
+            production.append([res[0],key])
         else:
             trade[str(res[0])] = res[1]
 
 for prod in production:
-    if prod in trade:
-        shared_items[str(prod)] = trade[str(prod)]
+    if prod[0] in trade:
+        shared_items[prod[1]][str(prod[0])] = trade[str(prod[0])]
 
 output = open('shared_items.json','wb')
 

@@ -1,3 +1,7 @@
+$(document).ready(function(){
+	$(".chosen-select").chosen();
+});
+
 function distance(lnglat1,lnglat2) {
 
     var rad = Math.PI / 180,
