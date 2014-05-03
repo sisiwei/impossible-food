@@ -25,6 +25,14 @@ $(document).ready(function(){
   	$('.table .th').after(text);
   	$('.just-loaded').fadeIn(1000);
   	$('.just-loaded').removeClass('.just-loaded');
+
+  	// Change the total
+  	var total = 0;
+  	$.each($('.tr .food-miles'), function(k,v){
+  		var num = $(v).text();
+  		total = total + parseInt(num.replace(/,/g, ''));
+  	});
+  	$('.total').html(addCommas(total));
   });
 
 });
@@ -38,4 +46,8 @@ function distance(lnglat1,lnglat2) {
     //Earth's radius in miles
     return  3963.19 * Math.acos(Math.sin(lat1) * Math.sin(lat2) +
         Math.cos(lat1) * Math.cos(lat2) * Math.cos((lnglat2[0] - lnglat1[0]) * rad));
+}
+
+function addCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
