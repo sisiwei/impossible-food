@@ -5,8 +5,8 @@ $(document).ready(function(){
     for (var food_category in data) {
       for (var food_id in data[food_category]) {
         var food = data[food_category][food_id];
-        $(".chosen-select").append('<option value="'+ food_id +'">'+ food + '</option>');
-        $(".chosen-select").trigger("chosen:updated");
+        $("#food").append('<option value="'+ food_id +'">'+ food + '</option>');
+        $("#food").trigger("chosen:updated");
       }
     }
   });
