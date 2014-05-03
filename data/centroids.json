@@ -1,0 +1,910 @@
+{
+	"Afghanistan": [
+		66,
+		33
+	],
+	"Albania": [
+		20,
+		41
+	],
+	"Algeria": [
+		3,
+		28
+	],
+	"American Samoa": [
+		-170,
+		-14.3333333
+	],
+	"Andorra": [
+		1.5,
+		42.5
+	],
+	"Angola": [
+		18.5,
+		-12.5
+	],
+	"Anguilla": [
+		-63.05,
+		18.216667
+	],
+	"Antigua and Barbuda": [
+		-61.8,
+		17.05
+	],
+	"Argentina": [
+		-64,
+		-34
+	],
+	"Armenia": [
+		45,
+		40
+	],
+	"Aruba": [
+		-69.966667,
+		12.5
+	],
+	"Saint Helena, Ascension and Tristan da Cunha": [
+		-5.7,
+		-15.95
+	],
+	"Australia": [
+		135,
+		-25
+	],
+	"Austria": [
+		13.333333,
+		47.333333
+	],
+	"Azerbaijan": [
+		47.5,
+		40.5
+	],
+	"Bahamas": [
+		-76,
+		24
+	],
+	"Bahrain": [
+		50.5,
+		26
+	],
+	"Bangladesh": [
+		90,
+		24
+	],
+	"Barbados": [
+		-59.533333,
+		13.166667
+	],
+	"Belarus": [
+		28,
+		53
+	],
+	"Belgium": [
+		4,
+		50.833333
+	],
+	"Belize": [
+		-88.75,
+		17.25
+	],
+	"Benin": [
+		2.25,
+		9.5
+	],
+	"Bermuda": [
+		-64.75,
+		32.333333
+	],
+	"Bhutan": [
+		90.5,
+		27.5
+	],
+	"Bolivia (Plurinational State of)": [
+		-65,
+		-17
+	],
+	"Bosnia and Herzegovina": [
+		17.833333,
+		44.25
+	],
+	"Botswana": [
+		24,
+		-22
+	],
+	"Brazil": [
+		-55,
+		-10
+	],
+	"British Virgin Islands": [
+		-64.5,
+		18.5
+	],
+	"Brunei Darussalam": [
+		114.666667,
+		4.5
+	],
+	"Bulgaria": [
+		25,
+		43
+	],
+	"Burkina Faso": [
+		-2,
+		13
+	],
+	"Myanmar": [
+		98,
+		22
+	],
+	"Burundi": [
+		30,
+		-3.5
+	],
+	"Cambodia": [
+		105,
+		13
+	],
+	"Cameroon": [
+		12,
+		6
+	],
+	"Canada": [
+		-96,
+		60
+	],
+	"Cabo Verde": [
+		-24,
+		16
+	],
+	"Cayman Islands": [
+		-80.666667,
+		19.5
+	],
+	"Central African Republic": [
+		21,
+		7
+	],
+	"Chad": [
+		19,
+		15
+	],
+	"Chile": [
+		-71,
+		-30
+	],
+	"China": [
+		105,
+		35
+	],
+	"Christmas Island": [
+		105.666667,
+		-10.5
+	],
+	"Cocos (Keeling) Islands": [
+		96.833333,
+		-12
+	],
+	"Colombia": [
+		-72,
+		4
+	],
+	"Comoros": [
+		44.25,
+		-12.166667
+	],
+	"Cook Islands": [
+		-161.583333,
+		-16.083333
+	],
+	"Costa Rica": [
+		-84,
+		10
+	],
+	"Côte d'Ivoire": [
+		-5,
+		8
+	],
+	"Croatia": [
+		15.5,
+		45.166667
+	],
+	"Cuba": [
+		-79.5,
+		22
+	],
+	"Cyprus": [
+		33,
+		35
+	],
+	"Czech Republic": [
+		15,
+		49.75
+	],
+	"Democratic Republic of the Congo": [
+		15,
+		-1
+	],
+	"Denmark": [
+		10,
+		56
+	],
+	"Djibouti": [
+		42.5,
+		11.5
+	],
+	"Dominica": [
+		-61.333333,
+		15.5
+	],
+	"Dominican Republic": [
+		-70.666667,
+		19
+	],
+	"Ecuador": [
+		-77.5,
+		-2
+	],
+	"Egypt": [
+		30,
+		27
+	],
+	"El Salvador": [
+		-88.916667,
+		13.833333
+	],
+	"Equatorial Guinea": [
+		10,
+		2
+	],
+	"Eritrea": [
+		39,
+		15
+	],
+	"Estonia": [
+		26,
+		59
+	],
+	"Ethiopia": [
+		38,
+		8
+	],
+	"Falkland Islands (Malvinas)": [
+		-59.166667,
+		-51.75
+	],
+	"Micronesia (Federated States of)": [
+		152,
+		5
+	],
+	"Fiji": [
+		178,
+		-18
+	],
+	"Finland": [
+		26,
+		64
+	],
+	"France": [
+		2,
+		46
+	],
+	"French Guiana": [
+		-53,
+		4
+	],
+	"French Polynesia": [
+		-140,
+		-15
+	],
+	"Gabon": [
+		11.75,
+		-1
+	],
+	"Gambia": [
+		-15.5,
+		13.5
+	],
+	"Gaza Strip (Palestine)": [
+		34.373398,
+		31.425074
+	],
+	"Georgia": [
+		43.499905,
+		41.999981
+	],
+	"Germany": [
+		10.5,
+		51.5
+	],
+	"Ghana": [
+		-2,
+		8
+	],
+	"Gibraltar": [
+		-5.35,
+		36.133333
+	],
+	"Greece": [
+		22,
+		39
+	],
+	"Greenland": [
+		-40,
+		72
+	],
+	"Grenada": [
+		-61.666667,
+		12.116667
+	],
+	"Guadeloupe": [
+		-61.583333,
+		16.25
+	],
+	"Guam": [
+		144.7366667,
+		13.4444444
+	],
+	"Guatemala": [
+		-90.25,
+		15.5
+	],
+	"Guinea": [
+		-10,
+		11
+	],
+	"Guinea-Bissau": [
+		-15,
+		12
+	],
+	"Guyana": [
+		-59,
+		5
+	],
+	"Haiti": [
+		-72.416667,
+		19
+	],
+	"Honduras": [
+		-86.5,
+		15
+	],
+	"Hungary": [
+		20,
+		47
+	],
+	"Iceland": [
+		-18,
+		65
+	],
+	"India": [
+		77,
+		20
+	],
+	"Indonesia": [
+		120,
+		-5
+	],
+	"Iran (Islamic Republic of)": [
+		53,
+		32
+	],
+	"Iraq": [
+		44,
+		33
+	],
+	"Ireland": [
+		-8,
+		53
+	],
+	"Israel": [
+		34.75,
+		31.5
+	],
+	"Italy": [
+		12.833333,
+		42.833333
+	],
+	"Jamaica": [
+		-77.5,
+		18.25
+	],
+	"Japan": [
+		138,
+		36
+	],
+	"Jordan": [
+		36,
+		31
+	],
+	"Kazakhstan": [
+		68,
+		48
+	],
+	"Kenya": [
+		38,
+		1
+	],
+	"Kiribati": [
+		-170,
+		-5
+	],
+	"Kuwait": [
+		47.75,
+		29.5
+	],
+	"Kyrgyzstan": [
+		75,
+		41
+	],
+	"Lao People's Democratic Republic": [
+		105,
+		18
+	],
+	"Latvia": [
+		25,
+		57
+	],
+	"Lebanon": [
+		35.833333,
+		33.833333
+	],
+	"Lesotho": [
+		28.25,
+		-29.5
+	],
+	"Liberia": [
+		-9.5,
+		6.5
+	],
+	"Libya": [
+		17,
+		25
+	],
+	"Liechtenstein": [
+		9.533333,
+		47.166667
+	],
+	"Lithuania": [
+		24,
+		56
+	],
+	"Luxembourg": [
+		6.166667,
+		49.75
+	],
+	"The former Yugoslav Republic of Macedonia": [
+		22,
+		41.833333
+	],
+	"Madagascar": [
+		47,
+		-20
+	],
+	"Malawi": [
+		34,
+		-13.5
+	],
+	"Malaysia": [
+		112.5,
+		2.5
+	],
+	"Maldives": [
+		73,
+		3.2
+	],
+	"Mali": [
+		-4,
+		17
+	],
+	"Malta": [
+		14.433333,
+		35.916667
+	],
+	"Marshall Islands": [
+		167,
+		10
+	],
+	"Martinique": [
+		-61,
+		14.666667
+	],
+	"Mauritania": [
+		-12,
+		20
+	],
+	"Mauritius": [
+		57.583333,
+		-20.3
+	],
+	"Mayotte": [
+		45.166667,
+		-12.833333
+	],
+	"Mexico": [
+		-102,
+		23
+	],
+	"Republic of Moldova": [
+		29,
+		47
+	],
+	"Monaco": [
+		7.4,
+		43.733333
+	],
+	"Mongolia": [
+		105,
+		46
+	],
+	"Montenegro": [
+		19.3,
+		42.5
+	],
+	"Montserrat": [
+		-62.2,
+		16.75
+	],
+	"Morocco": [
+		-5,
+		32
+	],
+	"Mozambique": [
+		35,
+		-18.25
+	],
+	"Namibia": [
+		17,
+		-22
+	],
+	"Nauru": [
+		166.916667,
+		-0.533333
+	],
+	"Nepal": [
+		84,
+		28
+	],
+	"Netherlands": [
+		5.75,
+		52.5
+	],
+	"New Caledonia": [
+		165.5,
+		-21.5
+	],
+	"New Zealand": [
+		174,
+		-42
+	],
+	"Nicaragua": [
+		-85,
+		13
+	],
+	"Niger": [
+		8,
+		16
+	],
+	"Nigeria": [
+		8,
+		10
+	],
+	"Niue": [
+		-169.866667,
+		-19.033333
+	],
+	"Norfolk Island": [
+		167.95,
+		-29.033333
+	],
+	"Democratic People's Republic of Korea": [
+		127,
+		40
+	],
+	"Northern Mariana Islands": [
+		146,
+		16
+	],
+	"Norway": [
+		10,
+		62
+	],
+	"Oman": [
+		57,
+		21
+	],
+	"Pakistan": [
+		70,
+		30
+	],
+	"Palau": [
+		134,
+		6
+	],
+	"Panama": [
+		-80,
+		9
+	],
+	"Papua New Guinea": [
+		147,
+		-6
+	],
+	"Paraguay": [
+		-57.996389,
+		-22.993333
+	],
+	"Peru": [
+		-76,
+		-10
+	],
+	"Philippines": [
+		122,
+		13
+	],
+	"Pitcairn Islands": [
+		-130.1,
+		-25.066667
+	],
+	"Poland": [
+		20,
+		52
+	],
+	"Portugal": [
+		-8,
+		39.5
+	],
+	"Puerto Rico": [
+		-66.4998941,
+		18.2482882
+	],
+	"Qatar": [
+		51.25,
+		25.5
+	],
+	"Romania": [
+		25,
+		46
+	],
+	"Russian Federation": [
+		100,
+		60
+	],
+	"Rwanda": [
+		30,
+		-2
+	],
+	"Saint Kitts and Nevis": [
+		-62.75,
+		17.333333
+	],
+	"Saint Lucia": [
+		-60.966667,
+		13.883333
+	],
+	"Saint Pierre and Miquelon": [
+		-56.333333,
+		46.833333
+	],
+	"Saint Vincent and the Grenadines": [
+		-61.2,
+		13.083333
+	],
+	"Samoa": [
+		-172.178309,
+		-13.803096
+	],
+	"San Marino": [
+		12.416667,
+		43.933333
+	],
+	"Sao Tome and Principe": [
+		7,
+		1
+	],
+	"Saudi Arabia": [
+		45,
+		25
+	],
+	"Senegal": [
+		-14,
+		14
+	],
+	"Serbia": [
+		21,
+		44
+	],
+	"Seychelles": [
+		55.666667,
+		-4.583333
+	],
+	"Sierra Leone": [
+		-11.5,
+		8.5
+	],
+	"Singapore": [
+		103.8,
+		1.366667
+	],
+	"Slovakia": [
+		19.5,
+		48.666667
+	],
+	"Slovenia": [
+		15.166667,
+		46.25
+	],
+	"Solomon Islands": [
+		159,
+		-8
+	],
+	"Somalia": [
+		48,
+		6
+	],
+	"South Africa": [
+		26,
+		-30
+	],
+	"Republic of Korea": [
+		127.5,
+		37
+	],
+	"Spain": [
+		-4,
+		40
+	],
+	"Sri Lanka": [
+		81,
+		7
+	],
+	"Sudan (former)": [
+		30,
+		16
+	],
+	"Suriname": [
+		-56,
+		4
+	],
+	"Swaziland": [
+		31.5,
+		-26.5
+	],
+	"Sweden": [
+		15,
+		62
+	],
+	"Switzerland": [
+		8,
+		47
+	],
+	"Syrian Arab Republic": [
+		38,
+		35
+	],
+	"China, Taiwan Province of": [
+		121,
+		24
+	],
+	"Tajikistan": [
+		71,
+		39
+	],
+	"United Republic of Tanzania": [
+		35,
+		-6
+	],
+	"Thailand": [
+		100,
+		15
+	],
+	"Timor-Leste": [
+		125.75,
+		-8.833333
+	],
+	"Togo": [
+		1.166667,
+		8
+	],
+	"Tokelau": [
+		-171.75,
+		-9
+	],
+	"Tonga": [
+		-175,
+		-20
+	],
+	"Trinidad and Tobago": [
+		-61,
+		11
+	],
+	"Tunisia": [
+		9,
+		34
+	],
+	"Turkey": [
+		34.911546,
+		39.059012
+	],
+	"Turkmenistan": [
+		60,
+		40
+	],
+	"Turks and Caicos Islands": [
+		-71.583333,
+		21.733333
+	],
+	"Tuvalu": [
+		178,
+		-8
+	],
+	"Uganda": [
+		33,
+		2
+	],
+	"Ukraine": [
+		32,
+		49
+	],
+	"United Arab Emirates": [
+		54,
+		24
+	],
+	"United Kingdom": [
+		-4,
+		54
+	],
+	"United States of America": [
+		-98.5795,
+		39.828175
+	],
+	"Uruguay": [
+		-56,
+		-33
+	],
+	"United States Virgin Islands": [
+		-64.9834807,
+		18.3482891
+	],
+	"Uzbekistan": [
+		63.84911,
+		41.707542
+	],
+	"Vanuatu": [
+		167,
+		-16
+	],
+	"Holy See": [
+		12.45,
+		41.9
+	],
+	"Venezuela (Bolivarian Republic of)": [
+		-66,
+		8
+	],
+	"Viet Nam": [
+		107.833333,
+		16.166667
+	],
+	"Wallis and Futuna Islands": [
+		-176.2,
+		-13.3
+	],
+	"West Bank": [
+		35.25,
+		31.666667
+	],
+	"Western Sahara": [
+		-13.5,
+		25
+	],
+	"Yemen": [
+		47.5,
+		15.5
+	],
+	"Zambia": [
+		30,
+		-15
+	],
+	"Zimbabwe": [
+		29,
+		-19
+	]
+}
