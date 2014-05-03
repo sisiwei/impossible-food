@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	background-color: #eee;
 }
 
 .cf:before,
@@ -23,18 +24,20 @@ h4 {
 	text-transform: uppercase;
 	width: 230px;
 	font-weight: 400;
-	margin: 16px 0 0 20;
+	margin: 26px 0 0 20;
 }
 
 .header {
-	background-color: #F3005E;
-	height: 67px;
-	padding: 15px 0 0 0;
+	padding: 15px 0 10px;
 }
 
 .header h1, .header h4 {
 	color: white;
 	float: left;
+}
+
+.header h1 span {
+	color: #FFDC00;
 }
 
 .footer {
