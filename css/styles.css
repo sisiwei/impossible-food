@@ -2,20 +2,36 @@ body {
 	margin: 0;
 }
 
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+
 h1 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
+	font-size: 70px;
+	margin: 0;
 }
 
 h4 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
+	width: 230px;
+	font-weight: 400;
+	margin: 16px 0 0 20;
 }
 
 .header {
 	background-color: #F3005E;
+	height: 67px;
 }
 
 .header h1, .header h4 {
 	color: white;
+	float: left;
 }
