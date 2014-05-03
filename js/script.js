@@ -1,5 +1,16 @@
 $(document).ready(function(){
 	$(".chosen-select").chosen();
+
+  jQuery.getJSON("data/shared_items.json", function(data){
+    for (var food_category in data) {
+      for (var food_id in data[food_category]) {
+        var food = data[food_category][food_id];
+        $("#food").append('<option value="'+ food_id +'">'+ food + '</option>');
+        $("#food").trigger("chosen:updated");
+      }
+    }
+  });
+
 });
 
 function distance(lnglat1,lnglat2) {
