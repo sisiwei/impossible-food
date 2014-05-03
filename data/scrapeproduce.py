@@ -7,6 +7,8 @@ from pprint import pprint
 
 produce_list = json.loads(open('shared_items.json','rb').read())
 
+countries = json.loads(open('clean/countries-by-code.json').read()).keys()
+
 produce = {'crops':{'domain':'QC','items':[],'elements':[]},'livestock':{'domain':'QL','items':[],'elements':[]}}
 
 produce['crops']['items'] = produce_list['crops'].keys()
@@ -32,7 +34,7 @@ for year in years:
           "datasource" : "faostat",
           "domainCode" : produce[key]['domain'],
           "lang" : "E",
-          "areaCodes" : ["231",], #country_codes,
+          "areaCodes" : countries, #country_codes,
           "itemCodes" : produce[key]['items'],
           "elementListCodes" : produce[key]['elements'],
           "years" : [year],
@@ -52,7 +54,7 @@ for year in years:
         )
         print "%s: %s - %s" % (response.status_code, year, response.url)
         with io.BytesIO(response.content) as i:
-          with io.open("%s-%s.json" % (key, year), 'wb') as f:
+          with io.open("all-countries-%s-%s.json" % (key, year), 'wb') as f:
             data=i.read(16384)
             while data:
               f.write(data)
