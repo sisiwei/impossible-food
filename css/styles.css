@@ -132,7 +132,7 @@ h4 {
 
 .table .tr div {
 	float: left;
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .qty-col {
@@ -150,20 +150,29 @@ h4 {
 	text-align: right;
 }
 
+.tr {
+	margin-bottom: 10px;
+}
 
 .tr .qty-col {
 	color: #666;
 	background-color: white;
 	padding: 8px 5px;
 	text-align: center;
-	border-radius: 3px;
 }
 
-.tr .food-item {
+.tr .food-item i {
+	padding-left: 4px;
+}
+
+.tr .food-item span {
 	padding: 8px 10px;
 	background-color: #001F3F;
 	color: #FFF;
 	border-radius: 3px;
+	top: 8px;
+	position: relative;
+	font-weight: 400;
 }
 
 .tr .food-miles {
