@@ -1,0 +1,21 @@
+body {
+	margin: 0;
+}
+
+h1 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+h4 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.header {
+	background-color: #F3005E;
+}
+
+.header h1, .header h4 {
+	color: white;
+}
