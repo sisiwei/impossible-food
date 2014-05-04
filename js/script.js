@@ -33,7 +33,8 @@ $(document).ready(function(){
       });
       $text.find(".qty-col").on("click",function(e){
         $(this).addClass("active");
-        $(this).find("input").focus().select();
+        $(this).find("input").focus();
+        $(this).find("input").select();
       });
 	  	$('.table .th').after($text);
 	  	$('.just-loaded').fadeIn(1000);
