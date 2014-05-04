@@ -186,9 +186,42 @@ h4 {
 
 .footer {
 	background-color: white;
-	height: 40px;
-	position: absolute;
+	height: 60px;
+	position: fixed;
 	bottom: 0px;
-	width: 320px;
-	margin: 0 30px;
+	width: 100%;
+	text-transform: uppercase;
+	border-top: 1px solid #ccc;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+	padding: 0 10px;
+}
+
+.share {
+	float: left;
+	padding: 11px 17px;
+	background-color: #001F3F;
+	color: #FFF;
+	font-size: 14px;
+	border-radius: 3px;
+	text-align: center;
+	margin: 10px;
+	cursor: pointer;
+}
+
+.total-miles {
+	float: right;
+	margin: 6px 7px;
+}
+
+.total {
+	font-size: 24px;
+	text-align: right;
+}
+
+.total-label {
+	font-size: 13px;
+	font-weight: 400;
+	color: #666;
 }
