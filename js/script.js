@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	$(".chosen-select").chosen();
 
-  jQuery.getJSON("data/shared_items.json", function(data){
+  $.getJSON("data/shared_items.json", function(data){
     for (var food_category in data) {
       for (var food_id in data[food_category]) {
         var food = data[food_category][food_id];
@@ -18,10 +18,10 @@ $(document).ready(function(){
   	var qty = $('#qty').val() == "" ? "1" : $('#qty').val();
 
   	// Calculate the food miles TBD
-  	var foodMiles = "2,345";
+  	var foodMiles = 2345;
 
   	// Add a line into the .table below
-  	var text = '<div class="tr just-loaded cf"><div class="qty-col">' + qty + '</div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + foodMiles + '</div> </div>';
+  	var text = '<div class="tr just-loaded cf"><div class="qty-col">' + qty + '</div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div> </div>';
   	$('.table .th').after(text);
   	$('.just-loaded').fadeIn(1000);
   	$('.just-loaded').removeClass('.just-loaded');
