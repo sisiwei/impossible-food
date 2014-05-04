@@ -98,6 +98,7 @@ h4 {
 
 .add-to-list:hover {
 	background-color: #ee4035;
+}
 
 .add-to-list.disabled {
 	background-color: #a0a0a0;
