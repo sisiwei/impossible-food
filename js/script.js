@@ -65,7 +65,7 @@ function createRows(paramID){
 
   var foodMiles;
 
-  var margin = {top: 20, right: 40, bottom: 20, left: 2}, chartWidth = 300-margin.left-margin.right, barHeight = 18, barSpacing = 3, chartHeight;
+  var margin = {top: 20, right: 56, bottom: 20, left: 2}, chartWidth = 300-margin.left-margin.right, barHeight = 18, barSpacing = 3, chartHeight;
 
   var xScale = d3.scale.linear().range([0,chartWidth]);
 
@@ -106,7 +106,7 @@ function createRows(paramID){
       "name": "United States of America",
       "abbreviation": "USA",
       "distance": 0,
-      "pct": Math.round(10000*data.domestic/(data.domestic+data.imports))/100
+      "pct": Math.floor(100*data.domestic/(data.domestic+data.imports))
     });
 
     var chartData = data.countries.filter(function(d){
@@ -127,9 +127,11 @@ function createRows(paramID){
       return a.distance - b.distance;
     });
 
-    xScale.domain([0,d3.max(data.countries.map(function(d){
+    xScale.domain([0,100]);
+
+    /*d3.max(data.countries.map(function(d){
       return d.pct;
-    }))*1.2]);
+    }))*1.2]);*/
 
     chartHeight = ((barSpacing*2 + barHeight)*chartData.length);
 
@@ -165,7 +167,7 @@ function createRows(paramID){
 
     groups.append("text")
       .text(function(d){
-        return d.pct+"% ("+d.abbreviation+")";
+        return Math.floor(d.pct)+"% ("+d.abbreviation+")";
       })
       .attr("x",function(d){
         return xScale(d.pct)+2;
