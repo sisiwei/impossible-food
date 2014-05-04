@@ -16,26 +16,29 @@ $(document).ready(function(){
   	var qty = $('#qty').val() == "" ? "1" : $('#qty').val();
 
   	// Calculate the food miles TBD
-  	var foodMiles = 2345;
+  	var foodMiles = 0;
+  	$.getJSON("data/mileage/231-" + foodID + ".json", function(data){
+	    foodMiles = parseInt(data.miles);
+	  }).done(function(){
 
-  	// Add a line into the .table below
-  	var text = '<div class="tr just-loaded cf"><div class="qty-col">' + qty + '</div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div> </div>';
-  	$('.table .th').after(text);
-  	$('.just-loaded').fadeIn(1000);
-  	$('.just-loaded').removeClass('.just-loaded');
+	  	// Add a line into the .table below
+	  	var text = '<div class="tr just-loaded cf"><div class="qty-col">' + qty + '</div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div> </div>';
+	  	$('.table .th').after(text);
+	  	$('.just-loaded').fadeIn(1000);
+	  	$('.just-loaded').removeClass('.just-loaded');
 
-  	// Removing a line
-	  $('.fa').click(function(){
-	  	$(this).closest('.tr').fadeOut(1000, function(){
-	  		$(this).closest('.tr').remove();
-	  		totalUpdate();
-	  	});
+	  	// Removing a line
+		  $('.fa').click(function(){
+		  	$(this).closest('.tr').fadeOut(1000, function(){
+		  		$(this).closest('.tr').remove();
+		  		totalUpdate();
+		  	});
+		  });
+
+		  totalUpdate();
+
 	  });
-
-	  totalUpdate();
   });
-
-
 });
 
 function totalUpdate(){

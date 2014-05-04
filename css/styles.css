@@ -1,5 +1,5 @@
 html, body {
-	width: 400px;
+	width: 300px;
 	margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@ body {
 }
 
 .impossible {
-	width: 400px;
+	width: 300px;
 	margin: 0 auto;
 	position: relative;
 }
@@ -28,9 +28,9 @@ body {
 h1 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 47px;
 	line-height: 50px;
-	margin: 20px 0 25px;
+	margin: 0px 0 15px;
 }
 
 h4 {
@@ -39,17 +39,16 @@ h4 {
 	font-weight: 400;
 	margin: 26px 0 0 20;
 	position: absolute;
-	left: 145px;
-	top: 69px;
+	left: 130px;
+	top: 48px;
 	font-size: 11px;
 	width: 153px;
 }
 
 .header {
-	padding: 15px 0 10px;
+	padding: 15px 0 0;
 	position: relative;
 	margin: 10px auto;
-	width: 82%;
 }
 
 .header h1, .header h4 {
@@ -72,12 +71,11 @@ h4 {
 }
 
 .content {
-	margin: 10px auto;
-	width: 82%;
+	margin: 10px auto 80px;
 }
 
 #food {
-	width: 250px !important;
+	width: 228px !important;
 }
 
 #qty {
@@ -85,7 +83,7 @@ h4 {
 }
 
 .add-to-list {
-	width: 322px;
+	width: 300px;
 	padding: 13px 0;
 	background-color: #fa0000;
 	color: #FFF;
@@ -104,6 +102,7 @@ h4 {
 	padding: 5px 10px;
 	border: 0px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-appearance: none;
 }
 
 .impossible .chosen-container-active.chosen-with-drop .chosen-single {
@@ -111,22 +110,27 @@ h4 {
 	border: none;
 	background-image: none;
 	box-shadow: none;
+	-webkit-appearance: none;
 }
 
 .impossible .chosen-container.chosen-with-drop .chosen-drop {
 	border: 0px;
+	-webkit-appearance: none;
 }
 
 .impossible .chosen-container-single .chosen-single div {
 	top: 4px;
+	-webkit-appearance: none;
 }
 
 .chosen-container .chosen-results li {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-appearance: none;
 }
 
 .table .tr div, .table .tr div:before, .table .tr div:after {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+	-webkit-appearance: none;
 }
 
 
@@ -157,12 +161,17 @@ h4 {
 }
 
 .food-item {
-	width: 150px;
-	margin-right: 10px;
+	width: 160px;
+}
+
+.food-item span {
+	max-width: 130px;
+	overflow: hidden;
+	display: inline-block;
 }
 
 .food-miles {
-	width: 123px;
+	width: 100px;
 	text-align: right;
 }
 
@@ -183,10 +192,9 @@ h4 {
 
 .tr .food-item span {
 	padding: 8px 10px;
-	background-color: #fa0000;
+	background-color: #FA0000;
 	color: #FFF;
 	border-radius: 3px;
-	top: 8px;
 	position: relative;
 	font-weight: 400;
 }
@@ -209,6 +217,7 @@ h4 {
 	box-sizing: border-box;
 	padding: 0 10px;
 	left: 0px;
+	opacity: 0.9;
 }
 
 .share {
