@@ -34,8 +34,6 @@ $(document).ready(function(){
       $text.find(".qty-col").on("click",function(e){
         $(this).addClass("active");
         $(this).find("input").focus();
-        $(this).find("input").get().setSelectionRange(0,999);
-        $(this).find("input").get().select();
       });
 	  	$('.table .th').after($text);
 	  	$('.just-loaded').fadeIn(1000);
