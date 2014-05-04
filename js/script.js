@@ -38,12 +38,13 @@ function createRows(){
 	var foodName = $("#food option:selected").text();
 	var qty = ($('#qty').val() == "" || $('#qty').val() == null) ? "1" : $('#qty').val();
 
-	// Calculate the food miles TBD
-	var foodMiles = 0;
+  var foodMiles;
 
-  var chartHeight = 180, chartWidth = 300;
+  var chartHeight = 140, chartWidth = 300;
 
-  var yScale = d3.scale.linear().range([chartHeight - 2,0]);
+  var yScale = d3.scale.linear().range([chartHeight - 2,20]);
+
+  $('.just-loaded').removeClass('just-loaded');
 
 	$.getJSON("data/mileage/231-" + foodID + ".json", function(data){
 
@@ -54,8 +55,8 @@ function createRows(){
 
   	// Add a line into the .table below
   	var $text = $('<div class="tr just-loaded cf"><div class="qty-col"><span>' + qty + '</span><input type="text" pattern="[0-9]*" value="' + qty + '"/></div> <div class="food-item gen" data-foodid="' + foodID + '"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div><div class="chart" id="chart-'+foodID+'"></div></div>');
-    $text.find("div.food-item").on("click",function(e){
-      $(this).parent().toggleClass("details");
+    $text.find("div.food-item span").on("click",function(e){
+      $(this).parent().parent().toggleClass("details");
     });
 
     $text.find("input").on("blur change",function(e){
@@ -72,9 +73,8 @@ function createRows(){
       $(this).addClass("active");
       $(this).find("input").focus();
     });
-  	$('.table .th').after($text);
-  	$('.just-loaded').fadeIn(1000);
-  	$('.just-loaded').removeClass('.just-loaded');
+    $('.table .th').after($text);
+    $('.just-loaded').fadeIn(1000);
 
     yScale.domain([0,d3.max(data.countries.map(function(d){
       return d.pct;
@@ -109,16 +109,17 @@ function createRows(){
 
     groups.append("text")
       .text(function(d){
-        return d.name;
+        return d.pct+"%";
       })
-      .attr("dy","14px")
+      .attr("dy","-3px")
       .attr("x",chartWidth/10)
       .attr("y",function(d){
         return yScale(d.pct);
       });
 
   	// Removing a line
-	  $('.fa').click(function(){
+	  $('.fa').click(function(e){
+      e.stopImmediatePropagation();
 	  	$(this).closest('.tr').fadeOut(1000, function(){
 	  		$(this).closest('.tr').remove();
 	  		totalUpdate();

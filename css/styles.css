@@ -196,7 +196,7 @@ div.tr div.chart {
 	clear: both;
 }
 
-div.tr.details div.chart {
+div.tr.details div.chart, div.tr.just-loaded div.chart {
 	display: block;
 	padding-top: 20px;
 }
@@ -212,7 +212,7 @@ div.chart rect {
 }
 
 div.chart text {
-	fill: #fff;
+	fill: #333;
 	stroke: none;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -227,6 +227,7 @@ div.chart text {
 	max-width: 130px;
 	overflow: hidden;
 	display: inline-block;
+	cursor: pointer;
 }
 
 .food-miles {
