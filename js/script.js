@@ -29,7 +29,12 @@ $(document).ready(function(){
       $text.find("input").on("blur change",function(e){
         var $div = $(this).parent();
         $div.removeClass("active");
-        $div.find("span").text($(this).val().match(/^[0-9]+$/) ? $(this).val() : "");
+        if ($(this).val().match(/^[0-9]+$/)) {
+          $div.find("span").text($(this).val());
+        } else {
+          $(this).val($div.find("span").text());
+        }
+
       });
       $text.find(".qty-col").on("click",function(e){
         $(this).addClass("active");
