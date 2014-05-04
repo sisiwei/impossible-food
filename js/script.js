@@ -2,12 +2,10 @@ $(document).ready(function(){
 	$(".chosen-select").chosen();
 
   $.getJSON("data/shared_items.json", function(data){
-    for (var food_category in data) {
-      for (var food_id in data[food_category]) {
-        var food = data[food_category][food_id];
-        $("#food").append('<option value="'+ food_id +'" data-food=' + food + '>'+ food + '</option>');
-        $("#food").trigger("chosen:updated");
-      }
+    for (var food_id in data) {
+      var food = data[food_id];
+      $("#food").append('<option value="'+ food_id +'" data-food=' + food + '>'+ food + '</option>');
+      $("#food").trigger("chosen:updated");
     }
   });
 
