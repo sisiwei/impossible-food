@@ -226,12 +226,25 @@ div.chart rect {
 	stroke: none;
 }
 
+div.chart rect.home {
+	fill: #666;
+}
+
 div.chart text {
 	fill: #333;
 	stroke: none;
-	font-size: 14px;
+	font-size: 12px;
+}
+
+div.chart g text {
 	text-transform: uppercase;
-	text-anchor: middle;
+	text-anchor: start;
+}
+
+div.chart text.label {
+	text-anchor: start;
+	fill: #999;
+	font-size: 12px;
 }
 
 .food-item {

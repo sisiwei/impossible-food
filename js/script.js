@@ -65,9 +65,9 @@ function createRows(paramID){
 
   var foodMiles;
 
-  var chartHeight = 140, chartWidth = 300;
+  var margin = {top: 20, right: 40, bottom: 20, left: 2}, chartWidth = 300-margin.left-margin.right, barHeight = 18, barSpacing = 3, chartHeight;
 
-  var yScale = d3.scale.linear().range([chartHeight - 2,20]);
+  var xScale = d3.scale.linear().range([0,chartWidth]);
 
   $('.just-loaded').removeClass('just-loaded');
 
@@ -101,46 +101,81 @@ function createRows(paramID){
     $('.table .th').after($text);
     $('.just-loaded').fadeIn(1000);
 
-    yScale.domain([0,d3.max(data.countries.map(function(d){
-      return d.pct;
-    }))]);
-
-    var chart = d3.select("div#chart-"+foodID).append("svg").attr("height",chartHeight).attr("width",chartWidth);
-
-    var chartData = data.countries.sort(function(a,b){
-      return a.distance - b.distance;
-    }).filter(function(d){
-      return d.pct >= 1;
+    data.countries.push({
+      "home": true,
+      "name": "United States of America",
+      "distance": 0,
+      "pct": Math.round(10000*data.domestic/(data.domestic+data.imports))/100
     });
 
-    chart.append("path").attr("d","M0,"+chartHeight+"L"+chartWidth+","+chartHeight)
+    var chartData = data.countries.filter(function(d){
+      return d.pct !== null && d.pct >= 1;
+    });
+
+    chartData.sort(function(a,b){
+      if (a.home) return -1;
+      if (b.home) return 1;
+      return b.pct - a.pct;
+    });
+
+    if (chartData.length > 5) chartData = chartData.slice(0,5);
+
+    chartData.sort(function(a,b){
+      if (a.home) return -1;
+      if (b.home) return 1;
+      return a.distance - b.distance;
+    });
+
+    xScale.domain([0,d3.max(data.countries.map(function(d){
+      return d.pct;
+    }))*1.2]);
+
+    chartHeight = ((barSpacing*2 + barHeight)*chartData.length);
+
+    var svg = d3.select("div#chart-"+foodID)
+      .append("svg")
+        .attr("width", chartWidth + margin.left + margin.right)
+        .attr("height", chartHeight + margin.top + margin.bottom)
+
+    var chart = svg.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");;
 
     var groups = chart.selectAll("g").data(chartData)
     .enter()
     .append("g")
     .attr("transform",function(d,i){
-      return "translate("+(i * chartWidth/5)+")";
+      var offset = i*(barHeight+(2*barSpacing));
+      return "translate(0,"+offset+")";
     });
 
     groups.append("rect")
-      .attr("x",4)
-      .attr("y",function(d){
-        return yScale(d.pct);
+      .attr("x",0)
+      .attr("y",barSpacing)
+      .attr("width",function(d){
+        return xScale(d.pct);
       })
-      .attr("width",chartWidth/5 - 8)
-      .attr("height",function(d){
-        return chartHeight-1-yScale(d.pct);
+      .attr("height",barHeight)
+      .classed("home",function(d,i){
+        return !i;
+      })
+      .on("mouseover",function(d){
+        console.log(d);
       });
 
     groups.append("text")
       .text(function(d){
-        return d.pct+"%";
+        return d.pct+"% ("+d.name.slice(0,3)+")";
       })
-      .attr("dy","-3px")
-      .attr("x",chartWidth/10)
-      .attr("y",function(d){
-        return yScale(d.pct);
-      });
+      .attr("x",function(d){
+        return xScale(d.pct)+2;
+      })
+      .attr("y",16);
+
+    chart.append("path").attr("d","M0,0 L0,"+chartHeight);
+
+    svg.append("text").attr("class","label").text("Nearest").attr("x",0).attr("y",margin.top-4);
+
+    svg.append("text").attr("class","label").text("Farthest").attr("x",0).attr("y",margin.top+chartHeight+12);
 
   	// Removing a line
 	  $('.food-item .fa').click(function(e){
