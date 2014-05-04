@@ -1,3 +1,5 @@
+var shareURL; 
+
 $(document).ready(function(){
 	$(".chosen-select").chosen();
 
@@ -30,7 +32,7 @@ $(document).ready(function(){
       $("#food").trigger("chosen:updated");
 
 	  	// Add a line into the .table below
-	  	var $text = $('<div class="tr just-loaded cf"><div class="qty-col"><span>' + qty + '</span><input type="text" pattern="[0-9]*" value="' + qty + '"/></div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div><div class="chart" id="chart-'+foodID+'"></div></div>');
+	  	var $text = $('<div class="tr just-loaded cf"><div class="qty-col"><span>' + qty + '</span><input type="text" pattern="[0-9]*" value="' + qty + '"/></div> <div class="food-item gen" data-foodid="' + foodID + '"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div><div class="chart" id="chart-'+foodID+'"></div></div>');
       $text.find("div.food-item").on("click",function(e){
         $(this).parent().toggleClass("details");
       });
@@ -104,6 +106,8 @@ $(document).ready(function(){
 
 		  totalUpdate();
 
+		  createHash();
+
 	  });
   });
 });
@@ -116,18 +120,25 @@ function totalUpdate(){
 		total = total + parseInt(num.replace(/,/g, ''));
 	});
 	$('.total').html(addCommas(total));
- }
-
-function distance(lnglat1,lnglat2) {
-    var rad = Math.PI / 180,
-        lat1 = lnglat1[1] * rad,
-        lat2 = lnglat2[1] * rad;
-
-    //Earth's radius in miles
-    return  3963.19 * Math.acos(Math.sin(lat1) * Math.sin(lat2) +
-        Math.cos(lat1) * Math.cos(lat2) * Math.cos((lnglat2[0] - lnglat1[0]) * rad));
 }
 
 function addCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+function createHash() {
+	// Get all the added items
+	var $food = $('.food-item.gen');
+	var hash = [];
+	$.each($food, function(k,v){
+		hash.push($(v).attr('data-foodid'));
+	});
+
+	shareURL = window.location.href + "?=" + hash.join(",");
+	shareHTML = "<i class='fa fa-link'></i><input type='text' value='" + shareURL + "'>";
+	$('.copy-url').html(shareHTML);
+
+	$('.share').click(function(){
+		$('.copy-url').fadeIn(500);
+	});
 }
