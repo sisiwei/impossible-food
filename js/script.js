@@ -104,12 +104,13 @@ function createRows(paramID){
     data.countries.push({
       "home": true,
       "name": "United States of America",
+      "abbreviation": "USA",
       "distance": 0,
       "pct": Math.round(10000*data.domestic/(data.domestic+data.imports))/100
     });
 
     var chartData = data.countries.filter(function(d){
-      return d.pct !== null && d.pct >= 1;
+      return (d.home || (d.pct !== null && d.pct >= 1));
     });
 
     chartData.sort(function(a,b){
@@ -164,7 +165,7 @@ function createRows(paramID){
 
     groups.append("text")
       .text(function(d){
-        return d.pct+"% ("+d.name.slice(0,3)+")";
+        return d.pct+"% ("+d.abbreviation+")";
       })
       .attr("x",function(d){
         return xScale(d.pct)+2;
