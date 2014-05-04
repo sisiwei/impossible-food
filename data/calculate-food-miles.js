@@ -7,63 +7,91 @@ queue()
   .defer(fs.readFile,"clean/countries-by-code.json")
   .defer(fs.readFile,"clean/all-countries-domestic-crops.json")
   .defer(fs.readFile,"clean/trade-matrix-2011.json")
-  .await(function(error,distances,countries,domestic,trade){
+  .defer(fs.readFile,"shared_items.json")
+  .await(function(error,distances,countries,domestic,trade,items){
     distances = JSON.parse(distances);
     countries = JSON.parse(countries);
     domestic = JSON.parse(domestic);
     trade = JSON.parse(trade);
+    items = JSON.parse(items);
 
-    var us = 231;
-    var bananas = 68;
-
-    var exports = trade.filter(function(d){
-      return d.e == us && d.c == bananas;
+    d3.keys(items).forEach(function(d){
+      doProduct(+d);
     });
 
-    var totalExports = d3.sum(exports.map(function(d){
-      return d.a;
-    }));
+    function doProduct(bananas) {
+      var us = 231;
+      bananas = +bananas;
 
-    var imports = trade.filter(function(d){
-      return d.i == us && d.c == bananas;
-    });
+      var exports = trade.filter(function(d){
+        return d.e == us && d.c == bananas;
+      });
 
-    var totalImports = d3.sum(imports.map(function(d){
-      return d.a;
-    }));
+      var totalExports = d3.sum(exports.map(function(d){
+        return d.a;
+      }));
 
-    var domestic = d3.sum(
-      domestic.filter(function(d){
-                return +d.country == us && +d.crop == bananas;
-               })
-              .map(function(d){
-                return d.amount;
-              })
-    );
+      var imports = trade.filter(function(d){
+        return d.i == us && d.c == bananas;
+      });
 
-    var discount = (domestic+totalImports-totalExports)/(domestic+totalImports);
+      var totalImports = d3.sum(imports.map(function(d){
+        return d.a;
+      }));
 
-    domestic = domestic * discount;
+      var domesticProduction = d3.sum(
+          domestic.filter(function(d){
+                  return +d.country == us && +d.crop == bananas;
+                 })
+                .map(function(d){
+                  return d.amount;
+                })
+      );
 
-    imports = imports.map(function(d){
-      d.a = d.a * discount;
-      return d;
-    });
+      var discount = (domesticProduction+totalImports-totalExports)/(domesticProduction+totalImports);
 
-    var totalConsumption = domestic + d3.sum(imports.map(function(d){ return d.a; }));
+      domesticProduction = domesticProduction * discount;
 
-    var miles = d3.sum(
+      imports = imports.map(function(d){
+        d.a = d.a * discount;
+        return d;
+      });
 
-      imports.map(function(d){
-        if (distances[us+"-"+d.e]) {
-          return d.a/totalConsumption * distances[us+"-"+d.e];
+      var totalConsumption = domesticProduction + d3.sum(imports.map(function(d){ return d.a; }));
+
+      var miles = d3.sum(
+
+        imports.map(function(d){
+          if (distances[us+"-"+d.e]) {
+            return d.a/totalConsumption * distances[us+"-"+d.e];
+          }
+
+          return 0;
+
+        })
+      );
+
+      var importDetails = imports.filter(function(d){
+        return countries[d.e] && distances[us+"-"+d.e];
+      }).map(function(d){
+        return {
+          "name": countries[d.e],
+          "distance": distances[us+"-"+d.e],
+          "pct": Math.round(10000*d.a/totalConsumption)/100
         }
+      });
 
-        return 0;
+      var results = {
+        "miles": miles,
+        "imports": totalImports,
+        "exports": totalExports,
+        "domestic": domesticProduction/discount,
+        "countries": importDetails
+      }
 
-      })
-    );
-
-    console.log(miles);
+      fs.writeFile("mileage/"+us+"-"+bananas+".json",JSON.stringify(results),function(err){
+        console.log(err);
+      });
+    }
 
   });
