@@ -30,7 +30,7 @@ h1 {
 	text-transform: uppercase;
 	font-size: 50px;
 	line-height: 50px;
-	margin: 20px 0 25px 25px;
+	margin: 20px 0 25px;
 }
 
 h4 {
@@ -39,8 +39,8 @@ h4 {
 	font-weight: 400;
 	margin: 26px 0 0 20;
 	position: absolute;
-	left: 170px;
-	top: 74px;
+	left: 145px;
+	top: 69px;
 	font-size: 11px;
 	width: 153px;
 }
@@ -48,6 +48,8 @@ h4 {
 .header {
 	padding: 15px 0 10px;
 	position: relative;
+	margin: 10px auto;
+	width: 82%;
 }
 
 .header h1, .header h4 {
@@ -61,7 +63,7 @@ h4 {
 
 .content {
 	margin: 10px auto;
-	width: 86%;
+	width: 82%;
 }
 
 #food {
@@ -196,6 +198,7 @@ h4 {
 	-webkit-box-sizing: border-box; 
 	box-sizing: border-box;
 	padding: 0 10px;
+	left: 0px;
 }
 
 .share {
