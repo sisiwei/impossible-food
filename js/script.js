@@ -23,9 +23,15 @@ $(document).ready(function(){
   });
 
   $('.add-to-list').click(function(){
-  	createRows();
+    if (!$('.add-to-list').hasClass('disabled')) {
+  	  createRows();
+    }
   });
 
+  updateAddButton();
+  setTimeout(updateAddButton, 100);
+  // Dumb, but wait for Chosen to update if user pressed "refresh"
+  $("#food").chosen().change(updateAddButton);
 });
 
 function createRows(paramID){
@@ -167,3 +173,12 @@ function createHash() {
 		$('.copy-url').fadeIn(500);
 	});
 }
+
+function updateAddButton() {
+  if ($("#food option:selected").val()) {
+    $('.add-to-list').removeClass('disabled');
+  } else {
+    $('.add-to-list').addClass('disabled');
+  }
+};
+
