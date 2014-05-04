@@ -26,19 +26,31 @@ $(document).ready(function(){
   	$('.just-loaded').fadeIn(1000);
   	$('.just-loaded').removeClass('.just-loaded');
 
-  	// Change the total
-  	var total = 0;
-  	$.each($('.tr .food-miles'), function(k,v){
-  		var num = $(v).text();
-  		total = total + parseInt(num.replace(/,/g, ''));
-  	});
-  	$('.total').html(addCommas(total));
+  	// Removing a line
+	  $('.fa').click(function(){
+	  	$(this).closest('.tr').fadeOut(1000, function(){
+	  		$(this).closest('.tr').remove();
+	  		totalUpdate();
+	  	});
+	  });
+
+	  totalUpdate();
   });
+
 
 });
 
-function distance(lnglat1,lnglat2) {
+function totalUpdate(){
+	// Change the total
+	var total = 0;
+	$.each($('.tr .food-miles'), function(k,v){
+		var num = $(v).text();
+		total = total + parseInt(num.replace(/,/g, ''));
+	});
+	$('.total').html(addCommas(total));
+ }
 
+function distance(lnglat1,lnglat2) {
     var rad = Math.PI / 180,
         lat1 = lnglat1[1] * rad,
         lat2 = lnglat2[1] * rad;
