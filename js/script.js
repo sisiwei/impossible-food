@@ -66,7 +66,6 @@ function createRows(paramID){
 	if (paramID != null){
 		foodID = paramID;
 		foodName = $('#food option[value="' + foodID + '"]').attr("data-food");
-		console.log(foodName);
 		qty = "1";
 	} else {
 		foodID = $('#food').val();
