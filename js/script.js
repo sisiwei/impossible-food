@@ -37,7 +37,7 @@ $(document).ready(function(){
   	var numRemaining = $('.rows').length;
   	$(this).closest('.rows').fadeOut(1000, function(){
   		$(this).closest('.rows').remove();
-  	});  	
+  	});
   	if (numRemaining == 1){
   		$('.recommendations').fadeOut(500);
   	};
@@ -65,7 +65,7 @@ function createRows(paramID){
 	paramID = typeof paramID !== 'undefined' ? paramID : null;
 	if (paramID != null){
 		foodID = paramID;
-		foodName = $('#food option[value="' + foodID + '"]').attr("data-food");
+		foodName = $('#food option[value="' + foodID + '"]').last().attr("data-food");
 		qty = "1";
 	} else {
 		foodID = $('#food').val();
