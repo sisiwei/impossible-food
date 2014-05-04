@@ -248,5 +248,15 @@ var countryCodes = {
   "Mayotte":"MYT",
   "South Africa":"ZAF",
   "Zambia":"ZMB",
-  "Zimbabwe":"ZWE"
+  "Zimbabwe":"ZWE",
+
+  "Bolivia (Plurinational State of)": "BOL",
+  "Venezuela (Bolivarian Republic of)": "VEN",
+  "China, Taiwan Province of": "TWN",
+  "Republic of Korea": "KOR",
+  "The former Yugoslav Republic of Macedonia": "MKD",
+  "Russian Federation": "RUS",
+  "United Republic of Tanzania": "TZA",
+  "Viet Nam": "VNM",
+  "Syrian Arab Republic": "SYR"
 };
