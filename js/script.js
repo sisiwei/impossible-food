@@ -186,7 +186,7 @@ function createRows(paramID){
 
     chart.append("path").attr("d","M0,0 L0,"+chartHeight);
 
-    var singular = foodName.match(/s$/i);
+    var singular = !foodName.match(/s$/i);
 
     svg.append("text").attr("class","label title").text("Your "+foodName.toLowerCase()+" come"+(singular ? "s" : "")+" from...").attr("x",0).attr("y",margin.top-4);
 
