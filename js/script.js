@@ -13,7 +13,7 @@ $(document).ready(function(){
   	// Detect the values in the select boxes
   	var foodID = $('#food').val();
   	var foodName = $("#food option:selected").text();
-  	var qty = $('#qty').val() == "" ? "1" : $('#qty').val();
+  	var qty = ($('#qty').val() == "" || $('#qty').val() == null) ? "1" : $('#qty').val();
 
   	// Calculate the food miles TBD
   	var foodMiles = 0;

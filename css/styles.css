@@ -96,13 +96,22 @@ h4 {
 	cursor: pointer;
 }
 
+select {
+	-webkit-appearance: none;
+	background: #FFF;
+	border-radius: 0px;
+	padding: 5px 10px;
+	border: 0px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	max-width: 226px;
+}
+
 .impossible .chosen-container-single .chosen-single {
 	background: #FFF;
 	border-radius: 0px;
 	padding: 5px 10px;
 	border: 0px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	-webkit-appearance: none;
 }
 
 .impossible .chosen-container-active.chosen-with-drop .chosen-single {
@@ -110,29 +119,23 @@ h4 {
 	border: none;
 	background-image: none;
 	box-shadow: none;
-	-webkit-appearance: none;
 }
 
 .impossible .chosen-container.chosen-with-drop .chosen-drop {
 	border: 0px;
-	-webkit-appearance: none;
 }
 
 .impossible .chosen-container-single .chosen-single div {
 	top: 4px;
-	-webkit-appearance: none;
 }
 
 .chosen-container .chosen-results li {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	-webkit-appearance: none;
 }
 
 .table .tr div, .table .tr div:before, .table .tr div:after {
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-	-webkit-appearance: none;
 }
-
 
 .table {
 	margin: 20px 0 0 0;
