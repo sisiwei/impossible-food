@@ -1,0 +1,20 @@
+for crop
+  total_imported
+  total_exported
+  total_produced
+
+  proportion_exported = total_exported / (total_imported+total_produced)
+  proportion_used_locally = 1/proportion_exported
+
+  wasd = proportion_used_locally * sum(amount_imported_from_country * distance_from_country_in_miles)/sum(amount_imported_from_country)
+
+  foreign_used = total_imported - (total_imported*proportion_exported)
+  local_used = total_produced - (total_produced*proportion_exported)
+
+  mileage_ratio = foreign_used / (foreign_used+local_used)
+
+  WASD * mileage_ratio = adjusted weighted average source distance
+
+
+
+
