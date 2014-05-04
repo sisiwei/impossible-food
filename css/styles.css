@@ -300,3 +300,25 @@ div.chart text {
 	font-weight: 400;
 	color: #666;
 }
+
+.copy-url {
+	position: absolute;
+	top: -45px;
+	background-color: #FFF;
+	padding: 8px 12px 6px 8px;
+	font-size: 12px;
+	border: 1px solid #ddd;
+	border-bottom: none;
+	border-radius: 5px;
+	text-transform: none;
+	display: none;
+}
+
+.copy-url input {
+	width: 230px;
+	border: none;
+}
+
+.copy-url .fa {
+	padding: 0 6px 0 4px;
+}
