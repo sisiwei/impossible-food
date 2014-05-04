@@ -18,8 +18,11 @@ $(document).ready(function(){
   	// Calculate the food miles TBD
   	var foodMiles = 0;
   	$.getJSON("data/mileage/231-" + foodID + ".json", function(data){
+
 	    foodMiles = parseInt(data.miles);
-	  }).done(function(){
+
+      $("#food option[value='"+foodId+"']").remove();
+      $("#food").trigger("chosen:updated");
 
 	  	// Add a line into the .table below
 	  	var text = '<div class="tr just-loaded cf"><div class="qty-col">' + qty + '</div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div> </div>';
