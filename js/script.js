@@ -35,6 +35,8 @@ $(document).ready(function(){
 });
 
 function createRows(paramID){
+	$('.table').fadeIn(500);
+
 	var foodID;
 	var foodName;
 	var qty;

@@ -41,8 +41,16 @@ h4 {
 	font-size: 12px;
 }
 
+h5 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: white;
+	margin-bottom: 10px;
+}
+
 .header {
-	padding: 15px 0 0;
+	padding: 5px 0 0;
 	position: relative;
 	margin: 10px auto;
 }
@@ -56,18 +64,25 @@ h4 {
 	color: #fa0000;
 }
 
-.background-header {
-/*	background: url("../images/corner.png") no-repeat;
-	height: 416px;
-	width: 470px;
-	position: absolute;
-	z-index: -2;
-	top: -10px;
-	left: -70px;*/
-}
-
 .content {
 	margin: 10px auto 80px;
+}
+
+.recommendations .rows {
+	color: #FFF;
+	background-color: #2ECC40;
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 0 0 6px;
+}
+
+.rows .fa {
+	padding: 0 4px;
+}
+
+.rows .fa.close {
+	float: right;
 }
 
 #food {
@@ -144,6 +159,7 @@ select {
 
 .table {
 	margin: 20px 0 0 0;
+	display: none;
 }
 
 .table .th div {
