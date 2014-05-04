@@ -198,6 +198,7 @@ function createRows(paramID){
 	  	$(this).closest('.tr').fadeOut(1000, function(){
 	  		$(this).closest('.tr').remove();
 	  		totalUpdate();
+	  		createHash();
 	  	});
 	  });
 
@@ -236,6 +237,9 @@ function createHash() {
 
 	$('.share').click(function(){
 		$('.copy-url').fadeIn(500);
+		setTimeout(function(){
+			$('.copy-url').fadeOut(500);
+		},4000);
 	});
 }
 
