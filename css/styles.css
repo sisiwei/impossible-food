@@ -357,3 +357,7 @@ div.chart text.label {
 .copy-url .fa {
 	padding: 0 6px 0 4px;
 }
+
+.rows .fa {
+	cursor: pointer;
+}
