@@ -6,7 +6,7 @@ $(document).ready(function(){
   $.getJSON("data/shared_items.json", function(data){
     for (var food_id in data) {
       var food = data[food_id];
-      $("#food").append('<option value="'+ food_id +'" data-food=' + food + '>'+ food + '</option>');
+      $("#food").append('<option value="'+ food_id +'" data-food="' + food + '">'+ food + '</option>');
       $("#food").trigger("chosen:updated");
     }
 
