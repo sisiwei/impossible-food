@@ -32,6 +32,16 @@ $(document).ready(function(){
   setTimeout(updateAddButton, 100);
   // Dumb, but wait for Chosen to update if user pressed "refresh"
   $("#food").chosen().change(updateAddButton);
+
+  $('.rows .fa').click(function(e){
+  	var numRemaining = $('.rows').length;
+  	$(this).closest('.rows').fadeOut(1000, function(){
+  		$(this).closest('.rows').remove();
+  	});  	
+  	if (numRemaining == 1){
+  		$('.recommendations').fadeOut(500);
+  	};
+  });
 });
 
 function createRows(paramID){
@@ -133,7 +143,7 @@ function createRows(paramID){
       });
 
   	// Removing a line
-	  $('.fa').click(function(e){
+	  $('.food-item .fa').click(function(e){
       e.stopImmediatePropagation();
 	  	$(this).closest('.tr').fadeOut(1000, function(){
 	  		$(this).closest('.tr').remove();
