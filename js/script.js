@@ -33,11 +33,21 @@ $(document).ready(function(){
   // Dumb, but wait for Chosen to update if user pressed "refresh"
   $("#food").chosen().change(updateAddButton);
 
-  $('.rows .fa').click(function(e){
+  $('.rows .fa.close').click(function(e){
   	var numRemaining = $('.rows').length;
   	$(this).closest('.rows').fadeOut(1000, function(){
   		$(this).closest('.rows').remove();
   	});  	
+  	if (numRemaining == 1){
+  		$('.recommendations').fadeOut(500);
+  	};
+  });
+
+  $('.rows .fa-plus').click(function(){
+  	var numRemaining = $('.rows').length;
+  	var adding = $(this).parent().attr('data-foodid');
+  	createRows(parseInt(adding));
+  	$(this).parent().fadeOut(500);
   	if (numRemaining == 1){
   		$('.recommendations').fadeOut(500);
   	};
