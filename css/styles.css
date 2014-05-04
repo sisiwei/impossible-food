@@ -217,7 +217,7 @@ div.tr.details div.chart, div.tr.just-loaded div.chart {
 }
 
 div.chart path {
-	stroke-width: 2px;
+	stroke-width: 1px;
 	stroke: #666;
 }
 
@@ -226,12 +226,31 @@ div.chart rect {
 	stroke: none;
 }
 
+div.chart rect.home {
+	fill: #666;
+}
+
 div.chart text {
 	fill: #333;
 	stroke: none;
-	font-size: 14px;
+	font-size: 12px;
+}
+
+div.chart g text {
 	text-transform: uppercase;
-	text-anchor: middle;
+	text-anchor: start;
+}
+
+div.chart text.label {
+	text-anchor: start;
+	font-weight: normal;
+	fill: #999;
+	font-size: 12px;
+}
+
+div.chart text.label.title {
+	fill: #666;
+	font-style: italic;
 }
 
 .food-item {
@@ -343,4 +362,8 @@ div.chart text {
 
 .copy-url .fa {
 	padding: 0 6px 0 4px;
+}
+
+.rows .fa {
+	cursor: pointer;
 }
