@@ -25,7 +25,11 @@ $(document).ready(function(){
       $("#food").trigger("chosen:updated");
 
 	  	// Add a line into the .table below
-	  	var text = '<div class="tr just-loaded cf"><div class="qty-col"><span>' + qty + '</span><input type="number" value="' + qty + '"/></div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div> </div>';
+	  	var text = $('<div class="tr just-loaded cf"><div class="qty-col"><span>' + qty + '</span><input type="text" pattern="[0-9]*" value="' + qty + '"/></div> <div class="food-item"><span>' + foodName + ' <i class="fa fa-times"></i></span></div> <div class="food-miles">' + addCommas(foodMiles) + '</div> </div>');
+      text.find(".qty-col").on("click",function(e){
+        $(this).addClass("active");
+
+      });
 	  	$('.table .th').after(text);
 	  	$('.just-loaded').fadeIn(1000);
 	  	$('.just-loaded').removeClass('.just-loaded');
