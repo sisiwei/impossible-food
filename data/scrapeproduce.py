@@ -9,13 +9,11 @@ produce_list = json.loads(open('shared_items.json','rb').read())
 
 countries = json.loads(open('clean/countries-by-code.json').read()).keys()
 
-produce = {'crops':{'domain':'QC','items':[],'elements':[]},'livestock':{'domain':'QL','items':[],'elements':[]}}
+produce = {'crops':{'domain':'QC','items':[],'elements':[]}}
 
-produce['crops']['items'] = produce_list['crops'].keys()
-produce['livestock']['items'] = produce_list['livestock'].keys()
+produce['crops']['items'] = produce_list.keys()
 
 elements_url = "http://faostat3.fao.org/faostat-api/rest/procedures/elements/faostat/"
-
 
 crops_elements = []
 livestock_elements = []
