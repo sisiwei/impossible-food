@@ -223,9 +223,11 @@ function createHash() {
 		hash.push($(v).attr('data-foodid'));
 	});
 
-	shareURL = window.location.href + "#" + hash.join(",");
+	var currentURL = window.location.href.split('#')[0];
+	shareURL = currentURL + "#" + hash.join(",");
 	shareHTML = "<i class='fa fa-link'></i><input type='text' value='" + shareURL + "'>";
 	$('.copy-url').html(shareHTML);
+	window.location.href = shareURL;
 
 	$('.share').click(function(){
 		$('.copy-url').fadeIn(500);
