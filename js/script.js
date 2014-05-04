@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 	    foodMiles = parseInt(data.miles);
 
-      $("#food option[value='"+foodId+"']").remove();
+      $("#food option[value='"+foodID+"']").remove();
       $("#food").trigger("chosen:updated");
 
 	  	// Add a line into the .table below
