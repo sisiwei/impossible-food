@@ -1,15 +1,6 @@
 var shareURL; 
 
 $(document).ready(function(){
-	// Does a hash exist?
-	var url = window.location.href.split('#')[1];
-	if (url == "" || url == undefined){
-
-	} else {
-		var items = url.split(',');
-		console.log(items);
-	}
-
 	$(".chosen-select").chosen();
 
   $.getJSON("data/shared_items.json", function(data){
@@ -18,6 +9,17 @@ $(document).ready(function(){
       $("#food").append('<option value="'+ food_id +'" data-food=' + food + '>'+ food + '</option>');
       $("#food").trigger("chosen:updated");
     }
+
+  	// Does a hash exist?
+		var url = window.location.href.split('#')[1];
+		if (url == "" || url == undefined){
+			// do nothing
+		} else {
+			var items = url.split(',');
+			$.each(items, function(k,v){
+				createRows(parseInt(v));
+			});
+		}
   });
 
   $('.add-to-list').click(function(){
@@ -26,11 +28,22 @@ $(document).ready(function(){
 
 });
 
-function createRows(){
-	// Detect the values in the select boxes
-	var foodID = $('#food').val();
-	var foodName = $("#food option:selected").text();
-	var qty = ($('#qty').val() == "" || $('#qty').val() == null) ? "1" : $('#qty').val();
+function createRows(paramID){
+	var foodID;
+	var foodName;
+	var qty;
+
+	// Detect the values in the URL or the select boxes
+	paramID = typeof paramID !== 'undefined' ? paramID : null;
+	if (paramID != null){
+		foodID = paramID;
+		foodName = $('#food option[value="' + foodID + '"]').attr("data-food");
+		qty = "1";
+	} else {
+		foodID = $('#food').val();
+		foodName = $("#food option:selected").text();
+		qty = ($('#qty').val() == "" || $('#qty').val() == null) ? "1" : $('#qty').val();
+	}
 
 	// Calculate the food miles TBD
 	var foodMiles = 0;
