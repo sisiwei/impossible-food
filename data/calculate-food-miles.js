@@ -8,12 +8,16 @@ queue()
   .defer(fs.readFile,"clean/all-countries-domestic-crops.json")
   .defer(fs.readFile,"clean/trade-matrix-2011-averaged.json")
   .defer(fs.readFile,"shared_items.json")
-  .await(function(error,distances,countries,domestic,trade,items){
+  .defer(fs.readFile,"country-codes.json")
+  .await(function(error,distances,countries,domestic,trade,items,abbreviations){
     distances = JSON.parse(distances);
     countries = JSON.parse(countries);
     domestic = JSON.parse(domestic);
     trade = JSON.parse(trade);
     items = JSON.parse(items);
+    abbreviations = JSON.parse(abbreviations);
+
+    console.log(abbreviations);
 
     d3.keys(items).forEach(function(d){
       doProduct(+d);
@@ -74,8 +78,12 @@ queue()
       var importDetails = imports.filter(function(d){
         return countries[d.e] && distances[us+"-"+d.e];
       }).map(function(d){
+        if (!abbreviations[countries[d.e]]) {
+          console.log(countries[d.e]);
+        }
         return {
           "name": countries[d.e],
+          "abbreviation": abbreviations[countries[d.e]],
           "distance": distances[us+"-"+d.e],
           "pct": Math.round(10000*d.a/totalConsumption)/100
         }

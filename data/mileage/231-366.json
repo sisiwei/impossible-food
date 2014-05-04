@@ -1,1 +1,1 @@
-{"miles":333.0886004594874,"imports":2348,"exports":1914,"domestic":45310,"countries":[{"name":"Egypt","distance":6765.763463105186,"pct":4.91},{"name":"Germany","distance":4829.46500900218,"pct":0},{"name":"Italy","distance":5306.252129014425,"pct":0.02}]}
+{"miles":333.0886004594874,"imports":2348,"exports":1914,"domestic":45310,"countries":[{"name":"Egypt","abbreviation":"EGY","distance":6765.763463105186,"pct":4.91},{"name":"Germany","abbreviation":"DEU","distance":4829.46500900218,"pct":0},{"name":"Italy","abbreviation":"ITA","distance":5306.252129014425,"pct":0.02}]}
