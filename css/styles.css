@@ -248,6 +248,11 @@ div.chart text.label {
 	font-size: 12px;
 }
 
+div.chart text.label.title {
+	fill: #666;
+	font-style: italic;
+}
+
 .food-item {
 	width: 160px;
 }

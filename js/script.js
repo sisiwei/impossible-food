@@ -186,7 +186,9 @@ function createRows(paramID){
 
     chart.append("path").attr("d","M0,0 L0,"+chartHeight);
 
-    svg.append("text").attr("class","label").text("Nearest").attr("x",0).attr("y",margin.top-4);
+    var singular = !foodName.match(/s$/i);
+
+    svg.append("text").attr("class","label title").text("Your "+foodName.toLowerCase()+" come"+(singular ? "s" : "")+" from...").attr("x",0).attr("y",margin.top-4);
 
     svg.append("text").attr("class","label").text("Farthest").attr("x",0).attr("y",margin.top+chartHeight+12);
 
