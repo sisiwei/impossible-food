@@ -58,7 +58,17 @@ h4 {
 }
 
 .header h1 span {
-	color: #001F3F;
+	color: #fa0000;
+}
+
+.background-header {
+/*	background: url("../images/corner.png") no-repeat;
+	height: 416px;
+	width: 470px;
+	position: absolute;
+	z-index: -2;
+	top: -10px;
+	left: -70px;*/
 }
 
 .content {
@@ -77,7 +87,7 @@ h4 {
 .add-to-list {
 	width: 322px;
 	padding: 13px 0;
-	background-color: #001F3F;
+	background-color: #fa0000;
 	color: #FFF;
 	text-transform: uppercase;
 	font-size: 14px;
@@ -173,7 +183,7 @@ h4 {
 
 .tr .food-item span {
 	padding: 8px 10px;
-	background-color: #001F3F;
+	background-color: #fa0000;
 	color: #FFF;
 	border-radius: 3px;
 	top: 8px;
@@ -183,7 +193,7 @@ h4 {
 
 .tr .food-miles {
 	padding: 5px;
-	color: #001F3F;
+	color: #fa0000;
 }
 
 .footer {
@@ -204,7 +214,7 @@ h4 {
 .share {
 	float: left;
 	padding: 11px 17px;
-	background-color: #001F3F;
+	background-color: #fa0000;
 	color: #FFF;
 	font-size: 14px;
 	border-radius: 3px;
