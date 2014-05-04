@@ -30,23 +30,27 @@ h1 {
 	text-transform: uppercase;
 	font-size: 47px;
 	line-height: 50px;
-	margin: 0px 0 15px;
+	margin: 0px 0 5px;
 }
 
 h4 {
 	font-family: 'Montserrat', sans-serif;
 	text-transform: uppercase;
 	font-weight: 400;
-	margin: 26px 0 0 20;
-	position: absolute;
-	left: 130px;
-	top: 48px;
-	font-size: 11px;
-	width: 153px;
+	margin: 0 0 10px;
+	font-size: 12px;
+}
+
+h5 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: white;
+	margin-bottom: 10px;
 }
 
 .header {
-	padding: 15px 0 0;
+	padding: 5px 0 0;
 	position: relative;
 	margin: 10px auto;
 }
@@ -60,18 +64,25 @@ h4 {
 	color: #fa0000;
 }
 
-.background-header {
-/*	background: url("../images/corner.png") no-repeat;
-	height: 416px;
-	width: 470px;
-	position: absolute;
-	z-index: -2;
-	top: -10px;
-	left: -70px;*/
-}
-
 .content {
 	margin: 10px auto 80px;
+}
+
+.recommendations .rows {
+	color: #FFF;
+	background-color: #2ECC40;
+	padding: 10px;
+	border-radius: 3px;
+	font-size: 14px;
+	margin: 0 0 6px;
+}
+
+.rows .fa {
+	padding: 0 4px;
+}
+
+.rows .fa.close {
+	float: right;
 }
 
 #food {
@@ -96,10 +107,13 @@ h4 {
 	cursor: pointer;
 }
 
+.add-to-list:hover {
+	background-color: #ee4035;
+}
+
 .add-to-list.disabled {
 	background-color: #a0a0a0;
 	cursor: default;
-
 }
 
 select {
@@ -145,6 +159,7 @@ select {
 
 .table {
 	margin: 20px 0 0 0;
+	display: none;
 }
 
 .table .th div {
@@ -196,7 +211,7 @@ div.tr div.chart {
 	clear: both;
 }
 
-div.tr.details div.chart {
+div.tr.details div.chart, div.tr.just-loaded div.chart {
 	display: block;
 	padding-top: 20px;
 }
@@ -212,7 +227,7 @@ div.chart rect {
 }
 
 div.chart text {
-	fill: #fff;
+	fill: #333;
 	stroke: none;
 	font-size: 14px;
 	text-transform: uppercase;
@@ -227,6 +242,7 @@ div.chart text {
 	max-width: 130px;
 	overflow: hidden;
 	display: inline-block;
+	cursor: pointer;
 }
 
 .food-miles {

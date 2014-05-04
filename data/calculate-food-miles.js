@@ -6,7 +6,7 @@ queue()
   .defer(fs.readFile,"clean/distances.json")
   .defer(fs.readFile,"clean/countries-by-code.json")
   .defer(fs.readFile,"clean/all-countries-domestic-crops.json")
-  .defer(fs.readFile,"clean/trade-matrix-2011.json")
+  .defer(fs.readFile,"clean/trade-matrix-2011-averaged.json")
   .defer(fs.readFile,"shared_items.json")
   .await(function(error,distances,countries,domestic,trade,items){
     distances = JSON.parse(distances);
@@ -15,8 +15,7 @@ queue()
     trade = JSON.parse(trade);
     items = JSON.parse(items);
 
-    //d3.keys(items)
-    [486].forEach(function(d){
+    d3.keys(items).forEach(function(d){
       doProduct(+d);
     });
 
@@ -35,8 +34,6 @@ queue()
       var imports = trade.filter(function(d){
         return d.i == us && d.c == bananas;
       });
-
-      console.log(imports);
 
       var totalImports = d3.sum(imports.map(function(d){
         return d.a;
@@ -75,7 +72,6 @@ queue()
       );
 
       var importDetails = imports.filter(function(d){
-        console.log(d.e);
         return countries[d.e] && distances[us+"-"+d.e];
       }).map(function(d){
         return {
@@ -92,6 +88,8 @@ queue()
         "domestic": domesticProduction/discount,
         "countries": importDetails
       };
+
+      console.log(bananas);
 
       fs.writeFile("mileage/"+us+"-"+bananas+".json",JSON.stringify(results),function(err){
         console.log(err);
