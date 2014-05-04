@@ -33,6 +33,10 @@ stream.pipe(split())
             "f": cells[12] //flag
           };
 
+          if (cells.i == 231 && cells.e == 138 && cells.c == 486) {
+            console.log(data);
+          }
+
           this.queue(JSON.stringify(cells)+","); //data *must* not be null
         },
         function end() { //optional

@@ -185,6 +185,34 @@ select {
 	font-family: 'Montserrat', sans-serif;
 }
 
+div.tr div.chart {
+	display: none;
+	clear: both;
+}
+
+div.tr.details div.chart {
+	display: block;
+	padding-top: 20px;
+}
+
+div.chart path {
+	stroke-width: 2px;
+	stroke: #666;
+}
+
+div.chart rect {
+	fill: #fa0000;
+	stroke: none;
+}
+
+div.chart text {
+	fill: #fff;
+	stroke: none;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-anchor: middle;
+}
+
 .food-item {
 	width: 160px;
 }
