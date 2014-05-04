@@ -217,7 +217,7 @@ div.tr.details div.chart, div.tr.just-loaded div.chart {
 }
 
 div.chart path {
-	stroke-width: 2px;
+	stroke-width: 1px;
 	stroke: #666;
 }
 
@@ -243,6 +243,7 @@ div.chart g text {
 
 div.chart text.label {
 	text-anchor: start;
+	font-weight: normal;
 	fill: #999;
 	font-size: 12px;
 }
