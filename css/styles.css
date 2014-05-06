@@ -367,3 +367,13 @@ div.chart text.label.title {
 .rows .fa {
 	cursor: pointer;
 }
+
+p {
+	font-size: 12px;
+	color: #888;
+}
+
+p a {
+	color: white;
+	text-decoration: underline;
+}

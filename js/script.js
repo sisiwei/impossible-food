@@ -189,10 +189,10 @@ function createRows(paramID){
     if (foodName) {
       var singular = !foodName.match(/s$/i);
 
-      svg.append("text").attr("class","label title").text("Your "+foodName.toLowerCase()+" come"+(singular ? "s" : "")+" from...").attr("x",0).attr("y",margin.top-6);
+      svg.append("text").attr("class","label title").text("Your "+foodName.toLowerCase()+" come"+(singular ? "s" : "")+" from...").attr("x",0).attr("y",margin.top-10);
     }
     
-    svg.append("text").attr("class","label").text("Farthest").attr("x",0).attr("y",margin.top+chartHeight+12);
+    svg.append("text").attr("class","label").text("Farthest").attr("x",0).attr("y",margin.top+chartHeight+18);
 
   	// Removing a line
 	  $('.food-item .fa').click(function(e){
